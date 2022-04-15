@@ -82,10 +82,7 @@
     float: right;
     font-size: 20px;
 }
-.street{
-    display: flex;
-    align-items: center;
-}
+
 .street::before{
     display: flex;
     content: "";
@@ -95,7 +92,7 @@
     background-size: cover;
     margin-right: 4px;
 }
-.city, .user-name{
+.city, .user-name, .street{
     display: flex;
     align-items: center;
 }
@@ -131,11 +128,7 @@
 .suite{
     margin-left: 5px;
 }
-.location, .user-email{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
+
 .user-email::before{
     display: flex;
     content: "";
@@ -155,11 +148,7 @@
     background-size: cover;
     margin-right: 4px;
 }
-.phone-number{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
+
 .phone-number::before{
     display: flex;
     content: "";
@@ -169,7 +158,8 @@
     background-size: cover;
     margin-right: 4px;
 }
-.web-site, .company-name{
+
+.web-site, .company-name, .phone-number, .location, .user-email{
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -192,7 +182,7 @@
     background-size: cover;
     margin-right: 4px;
 }
-.company, .zipcode{
+.zipcode{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -206,7 +196,6 @@
     background-size: cover;
     margin-right: 4px;
 }
-
 
 .post{
     padding: 12px;

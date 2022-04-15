@@ -100,9 +100,10 @@ function renderUsers(arr, obj) {
             li.appendChild(userWebsite);
     
             const elCompany = document.createElement("div");
-            elCompany.innerHTML = `<span class="company-name">${kompaniya.name}</span>
-            <span class="company-catchPhrase">${kompaniya.catchPhrase}</span>
-            <span class="company-bs">${kompaniya.bs}</span>`;
+            elCompany.classList.add("company")
+            elCompany.innerHTML = `<div class="company-name">${kompaniya.name}</div>
+            <div class="company-catchPhrase">#${kompaniya.catchPhrase}</div>
+            <div class="company-bs">#${kompaniya.bs}</div>`;
             li.appendChild(elCompany);
     
            fragment.appendChild(li);
@@ -126,9 +127,8 @@ function renderPosts(arr, obj) {
 
     arr.forEach(e => {
       const cloned = templatePost.cloneNode(true);
-      const {id, userId, title, body} = e;
+      const {id, title, body} = e;
       cloned.querySelector(".post").dataset.postData = id;
-      cloned.querySelector(".post").dataset.dataPost = userId;
       cloned.querySelector(".post-title").textContent = title;
       cloned.querySelector(".post-body").textContent = body;
   
@@ -167,8 +167,6 @@ userList.addEventListener("click", evt =>{
     if(evt.target.matches(".user-name")){
         const findUserId = evt.target.dataset.userData;
         find = data.findIndex(a => a.id == findUserId)
-
-       
         getPost();
     }
 })
