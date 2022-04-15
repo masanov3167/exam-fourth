@@ -146,7 +146,7 @@ function renderPosts(arr, obj) {
 };
 
 function renderComments(ar, obj) {
-    document.title = "Comments"
+    document.title = "Comments of posts"
     obj.innerHTML = null;
 
     const loaderDiv = document.createElement("div");
