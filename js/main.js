@@ -21,13 +21,6 @@ async function getPost(){
     renderPosts(array, postList);
 }
 
-let found;
-async function getComment(){
-    const res = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${found + 1}`);
-    const arr = await res.json();
-    renderComments(arr, commentList);
-}
-
 function renderUsers(arr, obj) {
     setTimeout(()=>{
         obj.innerHTML = "";
@@ -182,12 +175,13 @@ userList.addEventListener("click", evt =>{
 
 postList.addEventListener("click", evt =>{
     if(evt.target.matches(".post")){
-        const findUserId = evt.target.dataset.dataPost;
-        const findUserI = evt.target.dataset.postData;
-        found = array.findIndex(a => a.id == findUserI)
+        const find = evt.target.dataset.postData;
 
-        console.log(array);
-       
+        async function getComment(){
+            const res = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${find}`);
+            const arr = await res.json();
+            renderComments(arr, commentList);
+        }
         getComment();
     }
 })
